@@ -1,0 +1,123 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("The Big Calculator");
+            Console.WriteLine("1 - Normal Calculator");
+            Console.WriteLine("2 - Quadratic Formula Calculator");
+            Console.WriteLine("3 - More games/apps");
+            int input = Convert.ToInt32(Console.ReadLine());
+            switch (input)
+            {
+                case 1:
+                    GetNormalForm();
+                    break;
+                case 2:
+                    GetQuadraticForm();
+                    break;
+                case 3:
+                    Console.WriteLine("https://github.com/Jenji08");
+                    break;
+            }
+        }
+
+
+        static void GetQuadraticForm()
+        {
+            Console.WriteLine("Quadratic Formula:");
+            Console.WriteLine("X = -b +- √b^2 - 4ac");
+            Console.WriteLine("--------------------");
+            Console.WriteLine(" 2a");
+            Console.WriteLine("enter -b:");
+            double negb = Convert.ToDouble(Console.ReadLine());
+            double b = Math.Abs(negb);
+            //add a absolute value thing that takes this to make it positive
+            //double b = negb(absolute value); < not actual code just idea
+            Console.WriteLine("enter a:");
+            double a = Convert.ToDouble(Console.ReadLine());
+            double a2 = a * 2;
+            Console.WriteLine("enter c:");
+            double c = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("--------------------");
+            double step1 = Math.Pow(b, 2) - (4 * a * c);
+            double step2 = Math.Sqrt(step1);
+            double pos3 = negb + step2;
+            double neg3 = negb - step2;
+            double x1 = pos3 / a2;
+            double x2 = neg3 / a2;
+            Console.WriteLine(x1);
+            Console.WriteLine(x2);
+
+        }
+        static void GetNormalForm()
+        {
+            Console.WriteLine("Calculator");
+            Console.WriteLine("---------------");
+
+
+            Console.WriteLine("Enter num:");
+            double num1 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter sign:");
+            Console.WriteLine("+, -, *, /, ^, sqrt");
+            string sign = Console.ReadLine();
+
+            Console.WriteLine("Enter num:");
+            double num2 = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("---------------");
+            double sum = 0;
+
+            switch (sign)
+            {
+                case "+":
+                    // double sum = 0;
+                    sum = num1 + num2;
+                    Console.WriteLine(sum);
+                    break;
+                case "-":
+                    // double sum = 0;
+                    sum = num1 - num2;
+                    Console.WriteLine(sum);
+                    break;
+                case "*":
+                    // double sum = 0;
+                    sum = num1 * num2;
+                    Console.WriteLine(sum);
+                    break;
+                case "/":
+                    // double sum = 0;
+                    sum = num1 / num2;
+                    Console.WriteLine(sum);
+                    break;
+                case "^":
+                    // double sum = 0;
+                    sum = Math.Pow(num1, num2);
+                    Console.WriteLine(sum);
+                    break;
+                case "sqrt":
+                    // double sum = 0;
+                    sum = Math.Sqrt(num1);
+                    Console.WriteLine("Sqrt only uses the first num");
+                    Console.WriteLine(sum);
+                    break;
+
+            }
+
+
+
+
+
+
+
+        }
+
+
+    }
+}
